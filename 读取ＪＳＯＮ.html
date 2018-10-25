@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>读取JSON</title>
+    <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #bigbox{
+            width: 400px;
+            border: 1px solid gray;
+            margin: 50px auto;
+            background: whitesmoke;
+        }
+        #bigbox #box{
+            width: 100%;
+            margin-bottom: 10px;
+            border-bottom: 1px solid gray;
+        }
+        #btn{
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            font-size: 12px;
+            background: deepskyblue;
+            color: white;
+            padding: 5px 8px;
+            margin-bottom: 10px;
+        }
+        .typea{
+            display: inline-block;
+            text-decoration: none;
+            padding: 5px 8px;
+            font-size: 12px;
+            color: gray;
+            background: white;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .change{
+            background: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigbox">
+        <div id="box">
+            点击下面按钮，加载数据……
+        </div>
+        <button onclick="loadData()" id="btn">从JSON文件中加载内容</button>
+    </div>
+    
+    <script type="text/javascript">
+        function loadData() {
+            // 先清空原先的文本
+            $("#box").empty();
+            var typesArr;
+            // 点击按钮就会发起AJAX请求，获取对应数据
+            $.ajax({
+                url: "index.json",
+                type: "GET",
+                async: false,
+                // 请求成功会自动执行此回调函数
+                success: function (data, status) {
+                    // 从JSON中拿到所需数据
+                    typesArr = data["types"];
+                    for (var i in typesArr){
+                        var $a = $('<a href="#" class="typea">' + typesArr[i] + '</a>');
+                        // 为生成的每一个a标签绑定单击事件
+                        $a.on("click",function () {
+                            $(this).addClass("change").siblings().removeClass("change");
+                        });
+                        // 将a标签添加进div
+                        $("#box").append($a);
+                        // 设置第一个a标签的默认状态
+                        $("#box a:first").addClass("change");
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

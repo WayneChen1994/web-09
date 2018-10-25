@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>插入节点</title>
+        <script type="text/javascript" src="js/jquery-3.3.1.js" charset="utf-8"></script>
+</head>
+<body>
+        追加元素
+        1、在内部添加
+        $(父元素).append($(子元素))
+        功能：将子元素追加到父元素的内部，默认追加到末尾
+        
+        2、添加父元素内部的头部
+        $(父元素).prepend($(子元素))
+        功能：将子元素添加到父元素最前面的位置
+        
+        3、往后添加兄弟标签
+        $(兄元素).after(弟元素)
+        功能：将弟元素添加在兄元素的后面，这两个元素之间是兄弟关系
+        
+        4、往前添加兄弟标签
+        $(弟元素).before(兄元素)
+        功能：将标签2添加到标签1的前面
+        
+---------------------------------------------------------------------------------------
+        
+        <ul id="nav">
+                <li>西游记</li>
+                <li>水浒传</li>
+                <li>坏蛋是怎么练成的</li>
+        </ul>
+        
+        <button onclick="add()">添加节点【向后添加】</button>
+        <button onclick="add2()">添加节点【向前添加】</button>
+        <button onclick="add3()">往后插入兄弟标签</button>
+        <button onclick="add4()">往前插入兄弟标签</button>
+
+        <script type="text/javascript">
+                function add() {
+                        $("#nav").append($("<li>红楼梦</li>"));
+                        // $("<li>三国演义</li>").appendTo($("#nav"));
+                }
+                
+                function add2() {
+                        $("#nav").prepend($("<li>三国演义</li>"));
+                        $("#nav").prepend($("<li>射雕英雄传</li>"));
+                }
+                
+                function add3() {
+                        $("#nav li:first").after($("<li>雪山飞狐</li>"));
+                }
+                
+                function add4() {
+                        $("#nav li:last").before($("<li>诛仙</li>"));
+                }
+        </script>
+</body>
+</html>

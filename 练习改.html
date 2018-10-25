@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>练习改</title>
+        <script type="text/javascript" src="js/jquery-3.3.1.js" charset="utf-8"></script>
+        <style type="text/css">
+                *{
+                        margin: 0;
+                        padding: 0;
+                }
+                #box{
+                        width: 300px;
+                        height: 230px;
+                        background: whitesmoke;
+                        margin: 0 auto;
+                        padding-top: 5px;
+                }
+                .typea{
+                        display: inline-block;
+                        font-size: 12px;
+                        padding: 5px 8px;
+                        background: white;
+                        border-radius: 3px;
+                        margin: 5px;
+                        text-decoration: none;
+                        color: gray;
+                }
+                .change{
+                        background: orange;
+                        color: white;
+                }
+        </style>
+</head>
+<body>
+        <div id="box"></div>
+        
+        <script type="text/javascript">
+                $(document).ready(function () {
+                        var types = ["全部", "精品限免","效率", "旅行", "社交", "游戏", "影音", "财务", "工具", "资讯", "购物", "健康", "美食", "笔记", "生活", "学习", "图像", "专题", "应用动态", "参考", "美化", "最美出品"];
+                        
+                        for (var i in types){
+                                var $a =  $("<a href='#' class='typea'>" + types[i] + "</a>");
+                                $("#box").append($a);
+                        }
+                        
+                        $("#box a:first").addClass("change");
+                        
+                        $("#box a").on("click", function () {
+                                $(this).addClass("change").siblings().removeClass("change");
+                        })
+                });
+        </script>
+</body>
+</html>

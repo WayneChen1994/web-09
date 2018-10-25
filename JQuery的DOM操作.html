@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>JQuery的DOM操作</title>
+        <script type="text/javascript" src="js/jquery-3.3.1.js" charset="utf-8"></script>
+        <style type="text/css">
+                p{
+                        height: 50px;
+                        background: yellow;
+                }
+        </style>
+</head>
+<body>
+        总结
+        创建节点：
+        创建标签节点：
+        $('<标签></标签>')
+        创建文本节点：
+        $('<标签>文本</标签>')
+        创建属性节点：
+        $('<标签 属性名="属性值"></标签>')
+        
+        <div class="box">
+        
+        </div>
+        
+        <button onclick="add()">添加节点</button>
+        
+        <script type="text/javascript">
+                function add() {
+                        // 创建标签节点
+                        var $p = $("<p></p>");
+                        // 给标签节点添加文本
+                        $p.text("hello");
+                        // 将创建的标签节点，添加到指定的元素中
+                        $(".box").append($p);
+                        // $(".box").html("<p></p>");
+                }
+        </script>
+</body>
+</html>

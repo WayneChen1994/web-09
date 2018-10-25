@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>删除节点</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js" charset="utf-8"></script>
+</head>
+<body>
+    删除指定节点：
+    $("选择器").remove()
+    功能：删除当前节点并且移除子元素
+    
+    $("选择器").empty()
+    功能：删除当前节点的子元素，当前元素保留
+----------------------------------------------
+    $("选择器").clone()
+    功能：克隆选择器选中的标签以及其子标签
+----------------------------------------------
+    $(旧标签).replaceWith(新标签)
+    功能：使用新标签替换匹配的旧标签
+-----------------------------------------------
+    遍历节点：
+    $("选择器").each(function(index){
+        // 代码块
+        // index：选中标签下标
+        // this：每次拿出来的标签对象
+    })
+----------------------------------------------
+    包裹节点：
+    $("选择器").wrap("标签")
+    功能：给选中的元素包裹一个指定的标签【添加一个父元素】
+----------------------------------------------
+    
+    <ul id="nav">
+        <li>简爱</li>
+        <li>战争与和平</li>
+        <li>福尔摩斯探案集</li>
+        <li>哈利波特</li>
+    </ul>
+    
+    <button onclick="shanchu()">删除元素</button>
+    <button onclick="shanchu2()">删除元素2</button>
+    <button onclick="copy()">克隆</button>
+    <button onclick="tihuan()">节点替换</button>
+    <button onclick="bianli()">节点遍历</button>
+    <button onclick="baoguo()">包裹节点</button>
+        
+    <script type="text/javascript">
+        function shanchu() {
+            // 移除指定元素以及其子元素
+            $("#nav").remove();
+        }
+        
+        function shanchu2() {
+            // 清空所有子元素
+            $("#nav").empty();
+        }
+        
+        function copy() {
+            $("body").append($("#nav").clone());
+        }
+        
+        function tihuan() {
+            $("#nav li").replaceWith($('<div>python从入门到放弃</div>'));
+            // $('<div>python从入门到放弃</div>').replaceAll($("#nav li"));
+        }
+        
+        var arr = ["碟中谍6", "飓风营救", "西虹市首富", "无双"];
+        
+        function bianli() {
+            $("#nav li").each(function (index) {
+                console.log(this);
+                    $(this).text(arr[index]);
+            });
+        }
+        
+        function baoguo() {
+            $("#nav li").wrap('<div></div>')
+        }
+    </script>
+</body>
+</html>
