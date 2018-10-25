@@ -1,0 +1,290 @@
+.content{
+    width: 100%;
+    background: #aaa;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.contenter{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.content .con-left{
+    width: 650px;
+    float: left;
+}
+
+.content .con-right{
+    width: 300px;
+    float: right;
+}
+
+#imgbox li{
+    margin-bottom: 10px;
+}
+
+#imgbox li .box{
+    width: 590px;
+    height: 600px;
+    padding: 25px 30px;
+    position: relative;
+    background: white;
+}
+
+#imgbox .icon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+#imgbox h3{
+    position: absolute;
+    left: 100px;
+    top: 25px;
+    font-size: 16px;
+}
+
+#imgbox h3 .aa{
+    color: black;
+}
+
+#imgbox h3 span{
+    font-size: 20px;
+}
+
+.img-top .btu{
+    position: absolute;
+    left: 100px;
+    top: 55px;
+    background: url("../img/icons/love.png") no-repeat left center;
+    padding-left: 25px;
+    background-size: 20px 20px;
+}
+
+.img-top .time{
+    position: absolute;
+    right: 35px;
+    top: 35px;
+}
+
+#imgbox .image{
+    position: absolute;
+    left: 30px;
+    top: 100px;
+    width: 590px;
+}
+
+#imgbox .froms{
+    width: 590px;
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+}
+
+.froms .t1{
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.froms .t1 span{
+    font-size: 18px;
+    margin-right: 20px;
+    color: black;
+}
+
+.froms .yhl{
+    float: left;
+    width: 16px;
+    height: 16px;
+}
+
+.froms .yhr{
+    float: right;
+    width: 16px;
+    height: 16px;
+}
+
+.froms .con{
+    font-size: 14px;
+    color: gray;
+    line-height: 28px;
+    margin: 0 20px;
+}
+
+#type-box{
+    width: 285px;
+    height: 230px;
+    background: white;
+    padding-top: 5px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+#type-box span{
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 5px;
+    color: gray;
+}
+
+.typea{
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 8px;
+    background: whitesmoke;
+    border-radius: 3px;
+    margin: 5px;
+    text-decoration: none;
+    color: gray;
+}
+
+.change{
+    background: orange;
+    color: white;
+}
+
+#downloadBox{
+    width: 300px;
+    height: 220px;
+    background: white;
+    position: relative;
+}
+
+#downloadBox img{
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 120px;
+    top: 20px;
+    border-radius: 10px;
+}
+
+#downloadBox a{
+    display: block;
+    width: 240px;
+    height: 32px;
+    text-decoration: none;
+    background: deepskyblue;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    border-radius: 5px;
+    line-height: 32px;
+}
+
+#downloadBox p{
+    text-align: center;
+}
+
+#downloadBox #p1{
+    font-size: 16px;
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+
+#downloadBox #p2{
+    font-size: 16px;
+    color: gray;
+    position: absolute;
+    left: 90px;
+    bottom: 70px;
+}
+
+#rightPicsBox{
+    width: 300px;
+}
+
+#rightPicsBox li{
+    margin: 10px 0;
+}
+
+#rightPicsBox li img{
+    display: block;
+    width: 300px;
+    height: 170px;
+}
+
+#hotsBox{
+    width: 300px;
+    height: 360px;
+    background: white;
+    position: relative;
+}
+
+#hotsBox #hot{
+    display: block;
+    font-size: 16px;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+
+#hotsBox #hotsul{
+    width: 290px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    padding-left: 10px;
+}
+
+#hotsul .hotsli{
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.hotsli img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    float: left;
+    margin: 0 10px;
+}
+
+.hotsli .hotspan{
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.foot{
+    width: 100%;
+    height: 120px;
+    background: rgba(0,0,0,0.8);
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#footul{
+    width: 520px;
+    margin: 0 auto;
+}
+
+#footul li{
+    float: left;
+    margin-right: 35px;
+}
+
+#footul li a,.foot #p3,.foot #p4{
+    font-size: 16px;
+    color: gray;
+}
+
+.foot #p3{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.foot #p4{
+    text-align: center;
+}

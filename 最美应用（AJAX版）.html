@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>最美应用（AJAX版）</title>
+    <link rel="stylesheet" href="css/head.css" type="text/css">
+    <link rel="stylesheet" href="css/public.css" type="text/css">
+    <link rel="stylesheet" href="css/content.css" type="text/css">
+    <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="head">
+    <div class="header">
+        <div class="head-top">
+            <img class="logo" src="img/icons/logo.png"/>
+            <a class="title1 border" href="#">每日最美</a>
+            <a class="title2" href="#">发现应用</a>
+            <a class="login" href="#">登陆</a>
+            <a class="about change" href="#">关于最美团队</a>
+        </div>
+        <div class="head-bottom">
+            <p class="select">
+                <a class="color" href="#">Android</a>
+                <a href="#">iPhone</a>
+                <a href="#">iPad</a>
+            </p>
+            <form>
+                <input type="text" placeholder="搜索最美应用"/>
+                <input type="button" value=""/>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="contenter">
+        <div class="con-left">
+            <ul id="imgbox"></ul>
+        </div>
+        <div class="con-right">
+            <div id="type-box">
+                <span>分类</span>
+            </div>
+            <div id="downloadBox">
+                <img src="img/icons/zmIcon.png" />
+                <p id="p1">最美应用官方客户端</p>
+                <p id="p2">iPhone & Android</p>
+                <a href="#">下载</a>
+            </div>
+            <ul id="rightPicsBox"></ul>
+            <div id="hotsBox">
+                <span id="hot">热门</span>
+                <ul id="hotsul"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot">
+    <ul id="footul">
+        <li><a href="#">最美壁纸</a></li>
+        <li><a href="#">关于最美</a></li>
+        <li><a href="#">提出建议</a></li>
+        <li><a href="#">开发者自荐</a></li>
+        <li><a href="#">网站地图</a></li>
+    </ul>
+    <div style="clear: both"></div>
+    <p id="p3">&copy;2017&nbsp;最美&nbsp;京ICP备11031713号-2</p>
+    <p id="p4">案例由&nbsp;杨宇超&nbsp;提供&nbsp;yangyuchao@1000phone.com</p>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "index.json",
+            type: "GET",
+            async: false,
+            success:function (jsonData, status) {
+                // 得到左边页面所需数据
+                var appsData = jsonData["apps"];
+                // 动态生成左边的内容
+                for (var i in appsData){
+                    $("#imgbox").append('<li><div class="box"><div class="img-top"><img src="' + appsData[i]["appIcon"] + '" class="icon"/><h3><a href="#" class="aa"><span>' + appsData[i]["name"] + '</span>-- ' + appsData[i]["appDesc"] + '</a></h3><span class="btu">'+ appsData[i]["loveCount"] + '人美过</span><span class="time">' + appsData[i]["time"] + '</span></div><a href="#"><img class="image" src="' + appsData[i]["imageUrl"] + '"/></a><div class="froms"><p class="t1"><span>' + appsData[i]["userName"] + '</span>' + appsData[i]["userFrom"] + '：</p></p><img class="yhl" src="img/icons/yhl.png"/><p class="con">' + appsData[i]["userSaid"] + '</p><img class="yhr" src="img/icons/yhr.png"/></div></div></li>');
+                }
+                
+                // 得到右上方“分类”所需数据
+                var typesArr = jsonData["types"];
+                // 动态生成“分类”板块内容
+                for (var j in typesArr){
+                    var $a = $('<a href="#" class="typea">' + typesArr[j] + '</a>');
+                    $a.on("click", function () {
+                       $(this).addClass("change").siblings().removeClass("change");
+                    });
+                    $("#type-box").append($a);
+                }
+                $("#type-box a:first").addClass("change");
+                
+                // 得到右侧9张图片的数据
+                var picsArr = jsonData["pop"];
+                // 动态在右侧插入图片
+                for (var k in picsArr){
+                    var $li = $('<li><img src="' + picsArr[k] + '" /></li>');
+                    $("#rightPicsBox").append($li);
+                }
+                
+                // 得到“热门”板块所需数据
+                var hotsArr = jsonData["hot"];
+                // 动态生成
+                for (var x in hotsArr){
+                    var $li = $('<li class="hotsli"><img src="' + hotsArr[x]["icon"] + '" /><span class="hotspan">' + hotsArr[x]["desc"] + '</span></li>');
+                    $("#hotsul").append($li);
+                }
+                
+            }
+        });
+    });
+</script>
+</body>
+</html>
