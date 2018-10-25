@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>操作元素值</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+        value的操作：
+        
+        1、value值的获取
+        $(选择器).val()
+        
+        2、value值的设置
+        $(选择器).val(值)
+        
+--------------------------------------------------------------------------------------
+        
+        <form action="#" method="post">
+                <input type="text" placeholder="用户名" />
+                <input type="password" placeholder="密码" />
+                <input type="button" onclick="getValue()" value="获取文本" />
+        </form>
+
+        <script type="text/javascript">
+                function getValue() {
+                        var $val = $("input[type='text']").val();
+                        console.log($val);
+                        $("input[type='password']").val("123456");
+                }
+        </script>
+</body>
+</html>

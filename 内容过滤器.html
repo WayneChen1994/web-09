@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>内容过滤器</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+        <style type="text/css">
+                p{
+                        height: 50px;
+                }
+                div{
+                        height: 50px;
+                }
+        </style>
+</head>
+<body>
+        两个或者多个选择器之间不存在空格的时候，代表选中同一个对象，换句话说，同时满足这两个或者多个选择器的对象。
+        若多个选择器之间存在空格，则代表包含选择器。
+        例如：选择器1选择器2    --->   div#box
+        <p>hello</p>
+        
+        <p>
+                <div class="pp">
+                        <p>nice</p>
+                </div>
+        </p>
+        
+        <p class="pp">
+                <span>nice</span>
+        </p>
+        
+        <script type="text/javascript">
+                // $("p:contains('hello')").css({
+                //         "background": "red"
+                // });
+                //
+                // $("p:empty").css({
+                //         "background": "yellow"
+                // });
+                
+                // $(".pp").css({
+                //         "background": "blue"
+                // });
+                
+                $("p.pp").css({
+                        "background": "pink"
+                });
+                
+                // 匹配含有子节点的元素
+                $("p:parent").css({
+                        "background": "#333"
+                });
+        </script>
+</body>
+</html>

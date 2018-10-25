@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>html操作</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+        <style>
+                p{
+                        height: 50px;
+                        background: yellow;
+                }
+        </style>
+</head>
+<body>
+        总结：
+        
+        1、给选中的标签设置html【可以是标签也可以是文本】
+        $(选择器).html(设置内容)
+        
+        2、获取选中的标签的内容
+        $(选择器).html()
+        
+        此函数的功能类似于js中的innerHTML
+        
+--------------------------------------------------------------------------------------
+        
+        <div class="box">
+        
+        </div>
+        
+        <div id="box1">
+                <span>good</span>
+        </div>
+        
+        <button onclick="add()">添加元素</button>
+        
+        <script type="text/javascript">
+                function add() {
+                        // document.getElementsByClassName("box")[0].innerHTML = "<p>hello world</p>";
+                        $(".box").html("<p>hello world</p>");
+                        console.log($("#box1").html());
+                }
+        </script>
+</body>
+</html>

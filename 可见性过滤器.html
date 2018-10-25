@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>可见性过滤器</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+        <style type="text/css">
+                .box1{
+                        height: 50px;
+                        background: red;
+                        display: none;
+                }
+                .box2{
+                        height: 100px;
+                        background: yellow;
+                }
+        </style>
+</head>
+<body>
+        总结：
+        可见性过滤器（只支持display:none的隐藏，透明度opacity为0的不支持）：
+        
+        可见元素：没有给display:none，或者类型不是type="hidden"的元素都是可见元素
+        
+        不可见元素：display:none 或者 input type="hidden"
+        
+        1、选中可见的元素
+        选择器:visible
+        例如：div:visible
+        
+        2、选中不可见的元素
+        选择器:hidden
+        例如：div:hidden
+        
+----------------------------------------------------------------------------------------
+        
+        <div class="box1">
+        
+        </div>
+        
+        <div class="box2">
+        
+        </div>
+        
+        <button onclick="show()">显示按钮</button>
+        <button onclick="hided()">隐藏按钮</button>
+        
+        <script type="text/javascript">
+                function show(){
+                        $("div:hidden").css({
+                                "display": "block"
+                        });
+                }
+                
+                function hided() {
+                        $("div:visible:last").css({
+                                "display": "none"
+                        });
+                }
+        </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>属性过滤器</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+        <style type="text/css">
+                div{
+                        height: 50px;
+                        margin-bottom: 10px;
+                }
+                div[value='1']{
+                        background: red;
+                }
+        </style>
+</head>
+<body>
+        总结：我们可以通过属性来选中我们的标签
+        
+        1、通过属性选中
+        选择器[属性名]
+        例如：div[value]
+        
+        2、通过属性与属性值选中
+        选择器[属性名='属性值']
+        例如：div[value='3']
+        
+-----------------------------------------------------------------------------------------
+        
+        <div value="1"></div>
+        <div value="2"></div>
+        <div></div>
+        <div value="3"></div>
+        <div value="4"></div>
+
+        <script type="text/javascript">
+                // $('div[value]').css({
+                //         "background": "yellow"
+                // });
+
+                $('div[value="3"]').css({
+                        "background": "yellow"
+                });
+        </script>
+</body>
+</html>

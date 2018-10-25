@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>表单过滤器</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+        获取选中的元素： input:checked
+        结构选择器
+        ul li:first-child       选中第一个子元素
+        ul li:last-child        选中最后一个子元素
+        ul li:nth-child(num)    匹配父元素下的第num个子元素
+        
+        <form action="#" method="post">
+                <input type="checkbox" value="hobby1" name="hobby" checked="checked"/>打球
+                <input type="checkbox" value="hobby2" name="hobby"/>跳绳
+                <input type="checkbox" value="hobby3" name="hobby"/>踢毽子
+                <input type="submit" value="提交" />
+        </form>
+
+        <script type="text/javascript">
+                
+                $("input:checked").css({
+                        "background": "red"
+                });
+        </script>
+</body>
+</html>

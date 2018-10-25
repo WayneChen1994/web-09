@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>简单过滤选择器</title>
+        <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+        总结：
+        1、匹配选择器选中的第一个元素
+        选择器:first
+        例如：.nav li:first
+        
+        2、匹配选择器选中的最后一个元素
+        选择器:last
+        例如：.nav li:last
+        
+        3、匹配选择器选中的指定索引值的元素【索引值从0开始】
+        选择器:eq(index)
+        例如：.nav li:eq(0)
+        
+        4、匹配选择器选中的所有索引值为偶数的元素【索引值从0开始】
+        选择器:even
+        例如：.nav li:even
+        
+        5、匹配选择器选中所有索引值为奇数的元素【索引值从0开始】
+        选择器:odd
+        例如：.nav li:odd
+        
+--------------------------------------------------------------------------------------
+       
+        <ul class="nav">
+                <h1>hello</h1>
+                <li>首页</li>
+                <li>新闻</li>
+                <li>体育</li>
+                <li>娱乐</li>
+        </ul>
+
+        <script type="text/javascript">
+                // $(".nav li:first-child").css({
+                //         "background": "yellow"
+                // });
+                
+                // $(".nav li:first").css({
+                //         "background": "yellow"
+                // });
+
+                // $(".nav li:last").css({
+                //         "background": "red"
+                // });
+
+                // $(".nav li:eq(1)").css({
+                //         "background": "pink"
+                // });
+
+                // $(".nav li:even").css({
+                //         "background": "pink"
+                // });
+
+                // $(".nav li:odd").css({
+                //         "background": "blue"
+                // });
+
+                $(".nav li:gt(1)").css({
+                        "background": "pink"
+                });
+
+                $(".nav li:lt(1)").css({
+                        "background": "pink"
+                });
+                
+                $(":header").css({
+                        "background": "green"
+                });
+        </script>
+</body>
+</html>
